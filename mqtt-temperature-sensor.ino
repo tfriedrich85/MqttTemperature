@@ -1,9 +1,15 @@
+//fork for more than one DHT22
 #include <DHT.h>
 #include <Ethernet.h>
 #include <PubSubClient.h>
 #include <SPI.h>
   
-#define DHTPIN 3
+#define DHTPIN3 3
+//change
+#define DHTPIN4 4
+#define DHTPIN5 5
+#define DHTPIN6 6
+#define DHTPIN7 7
 #define DHTTYPE DHT22 
 
 byte mac[] = {0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED };
@@ -16,7 +22,7 @@ char topic[] = "mqtt-temperature-sensor";
 float humidity;
 float temperature;
 
-DHT dht(DHTPIN, DHTTYPE);
+DHT dht(DHTPIN3,DHTPIN4,DHTPIN5,DHTPIN6,DHTPIN7,DHTTYPE);
 EthernetClient ethernetClient;
 PubSubClient client(ethernetClient);
 
